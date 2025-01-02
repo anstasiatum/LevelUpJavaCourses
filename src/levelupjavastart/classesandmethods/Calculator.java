@@ -8,7 +8,7 @@ public class Calculator {
         Calculator calculator = new Calculator();
         String operationType = calculator.operationReader();
         String numberType = calculator.numberTypeReader();
-        String errorMessageForWrongOption = "Wrong combination. Try again.";
+        String errorMessageForWrongOption = "Wrong combination. Try again";
         String errorMessageForDivisionByZero = "Cannot divide by zero";
         switch (operationType) {
             case "sum":
