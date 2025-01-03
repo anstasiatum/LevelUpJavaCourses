@@ -1,6 +1,4 @@
-package levelupjavastart.classesandmethods.Calculator;
-
-import java.util.Scanner;
+package levelupjavastart.classesandmethods.calculator;
 
 public class Calculator {
 

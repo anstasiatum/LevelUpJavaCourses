@@ -1,4 +1,4 @@
-package levelupjavastart.classesandmethods.Calculator;
+package levelupjavastart.classesandmethods.calculator;
 
 public class Converter {
     public static class IntAAndB {

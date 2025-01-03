@@ -1,7 +1,5 @@
 package extra.arrayclass;
 
-import levelupjavastart.inheritance.Pets.Pet;
-
 import java.util.Scanner;
 
 public class ArrayClass {

@@ -1,4 +1,4 @@
-package levelupjavastart.inheritance.Pets;
+package levelupjavastart.inheritance.pets;
 
 import java.util.Scanner;
 
