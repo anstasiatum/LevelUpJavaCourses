@@ -1,7 +1,7 @@
 package levelupjavastart.inheritance.pets;
 
 public class Dog extends Pet {
-    String Breed = "Golden retriever";
+    String breed = "Golden retriever";
 
     public Dog(String name, int age) {
         super(name, age, AnimalType.DOG);
@@ -9,7 +9,7 @@ public class Dog extends Pet {
 
     public void printInfo() {
         super.printInfo();
-        System.out.println("Breed: " + Breed);
+        System.out.println("Breed: " + breed);
         System.out.println();
     }
 

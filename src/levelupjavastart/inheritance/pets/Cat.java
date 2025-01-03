@@ -3,7 +3,7 @@ package levelupjavastart.inheritance.pets;
 
 public class Cat extends Pet {
 
-    String FavouriteToy = "Mouse";
+    String favouriteToy = "Mouse";
 
     public Cat(String name, int age) {
         super(name, age, AnimalType.CAT);
@@ -19,7 +19,7 @@ public class Cat extends Pet {
 
     public void printInfo() {
         super.printInfo();
-        System.out.println("Favourite Toy: " + FavouriteToy);
+        System.out.println("Favourite Toy: " + favouriteToy);
         System.out.println();
     }
 

@@ -23,14 +23,12 @@ public abstract class Pet {
 
     public abstract void makeNoise();
 
-    public boolean eat() {
+    public void eat() {
         if (isHungry) {
             System.out.println(name + " is fed and happy!");
             isHungry = false;
-            return true;
         } else {
             System.out.println(name + " is not hungry, she won't eat.");
-            return false;
         }
     }
 
