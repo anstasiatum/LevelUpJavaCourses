@@ -12,7 +12,6 @@ public abstract class Pet {
     }
     AnimalType animalType;
     static String animal = "Pet";
-    boolean isAsleep;
 
     public Pet(String name, int age, AnimalType animalType) {
         this.name = name;
