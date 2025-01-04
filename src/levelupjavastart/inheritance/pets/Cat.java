@@ -9,6 +9,7 @@ public class Cat extends Pet {
         super(name, age, AnimalType.CAT);
     }
 
+    @Override
     public void makeNoise() {
         if (isHungry) {
             System.out.println(name + " is meowing. She is hungry!");
@@ -16,7 +17,7 @@ public class Cat extends Pet {
             System.out.println(name + " is silent, she isn't hungry.");
         }
     }
-
+    @Override
     public void printInfo() {
         super.printInfo();
         System.out.println("Favourite Toy: " + favouriteToy);

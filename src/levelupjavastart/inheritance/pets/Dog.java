@@ -7,13 +7,14 @@ public class Dog extends Pet {
         super(name, age, AnimalType.DOG);
     }
 
+    @Override
     public void printInfo() {
         super.printInfo();
         System.out.println("Breed: " + breed);
         System.out.println();
     }
 
-
+    @Override
     public void makeNoise() {
         if (isHungry) {
             System.out.println(name + " is barking. He is hungry!");
