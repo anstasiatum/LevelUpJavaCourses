@@ -1,7 +1,7 @@
 package extra.shape;
 
 public abstract class Shape {
-        double volume;
+        protected double volume;
 
     public double getVolume() {
         return volume;
