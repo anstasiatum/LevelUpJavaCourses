@@ -16,6 +16,38 @@ public class ConverterRunner {
         System.out.print("Set the initial temperature value: ");
         double initialValue = scanner.nextDouble();
 
-        System.out.println("The result is: " + TemperatureConverter.converter(initialScale, initialValue, targetScale));
+        String IllegalArgumentExceptionText = "Wrong option";
+
+        TemperatureMeasurement measurementUnit;
+
+        switch (initialScale) {
+            case CELSIUS:
+                measurementUnit = new CelsiusMeasurement(initialValue);
+                break;
+            case FAHRENHEIT:
+                measurementUnit = new FahrenheitMeasurement(initialValue);
+                break;
+            case KELVIN:
+                measurementUnit = new KelvinMeasurement(initialValue);
+                break;
+            default:
+                throw new IllegalArgumentException(IllegalArgumentExceptionText);
+        }
+        double result;
+        switch (targetScale) {
+            case CELSIUS:
+                result = measurementUnit.toCelsius();
+                break;
+            case FAHRENHEIT:
+                result = measurementUnit.toFahrenheit();
+                break;
+            case KELVIN:
+                result = measurementUnit.toKelvin();
+                break;
+            default:
+                throw new IllegalArgumentException(IllegalArgumentExceptionText);
+        }
+
+        System.out.println("The result is: " + result);
     }
 }

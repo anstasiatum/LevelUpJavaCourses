@@ -1,6 +1,8 @@
 package levelupjavastart.temperatures;
 
 public interface Convertable {
-    void convert();
+    double toCelsius();
+    double toKelvin();
+    double toFahrenheit();
 
 }
