@@ -14,18 +14,6 @@ public class TVK<T extends Comparable<T>, V extends Animal & Serializable, K ext
         System.out.println(this.k.getClass().getName());
     }
 
-    public T tPrinter() {
-        return this.t;
-    }
-
-    public V vPrinter() {
-        return this.v;
-    }
-
-    public K kPrinter() {
-        return this.k;
-    }
-
     public TVK(T t, V v, K k) {
         this.t = t;
         this.v = v;
