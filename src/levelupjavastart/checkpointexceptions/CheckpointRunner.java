@@ -1,8 +1,5 @@
 package levelupjavastart.checkpointexceptions;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CheckpointRunner {
     public static void main(String[] args) {
         for (int carCount = 0; carCount < 50; carCount++) {
