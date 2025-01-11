@@ -19,5 +19,11 @@ public class ConverterRunner {
         double result = TemperatureConverter.convertTemperature(initialScale, initialValue, targetScale);
 
         System.out.println("The result is: " + result);
+
+    }
+    public void calculate(int n) throws ArithmeticException
+    {
+        if (n == 0)
+            throw new ArithmeticException("n равно нулю!");
     }
 }
