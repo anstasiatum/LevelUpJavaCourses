@@ -8,7 +8,7 @@ public class Automobile {
         TRUCK
     }
 
-    AutomobileType automobileType;
+    private AutomobileType automobileType;
     private String plateNumber;
     private double speed;
     private double weight;

@@ -10,7 +10,7 @@ public class CheckpointRestrictions {
     }
 
     public static void sizeRestrictions(Automobile automobile) throws SizeException {
-        String sizeExceptionText = "The automobile cannot pass - it is too large. Plate number: " + automobile.getPlateNumber() + ", " + automobile.automobileType;
+        String sizeExceptionText = "The automobile cannot pass - it is too large. Plate number: " + automobile.getPlateNumber() + ", " + automobile.getAutomobileType();
 
         if (automobile.getWeight() > 8)
             throw new SizeException(sizeExceptionText);
