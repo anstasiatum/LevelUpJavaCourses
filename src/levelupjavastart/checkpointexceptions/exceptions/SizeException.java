@@ -1,4 +1,4 @@
-package levelupjavastart.checkpointexceptions;
+package levelupjavastart.checkpointexceptions.exceptions;
 
 public class SizeException extends RuntimeException {
     public SizeException (String message) {

@@ -3,10 +3,6 @@ package levelupjavastart.checkpointexceptions;
 import java.util.Random;
 
 public class Automobile {
-    public enum AutomobileType {
-        CAR,
-        TRUCK
-    }
 
     private AutomobileType automobileType;
     private String plateNumber;
@@ -16,29 +12,25 @@ public class Automobile {
     private double height;
     private double length;
 
-    private static final Random random = new Random();
+    private static final Random RANDOM = new Random();
 
     public static Automobile carGenerator() {
         Automobile automobile = new Automobile();
-        if (random.nextInt(0, 2) == 0)
-            automobile.automobileType = Automobile.AutomobileType.TRUCK;
-        else
-            automobile.automobileType = Automobile.AutomobileType.CAR;
-
+        automobile.automobileType = RANDOM.nextBoolean() ? AutomobileType.TRUCK : AutomobileType.CAR;
 
         StringBuilder stringBuilderForCarPlateLetters = new StringBuilder(3);
         for (int i = 0; i < 3; i++) {
-            int randomLimitedInt = random.nextInt(97, 123);
+            int randomLimitedInt = RANDOM.nextInt(97, 123);
             stringBuilderForCarPlateLetters.append((char) randomLimitedInt);
         }
         String carPlateLetters = stringBuilderForCarPlateLetters.toString();
 
-        automobile.plateNumber = random.nextInt(100, 1000) + carPlateLetters;
-        automobile.width = random.nextDouble(1.5, 3);
-        automobile.height = random.nextDouble(1, 5);
-        automobile.length = random.nextDouble(3, 7.5);
-        automobile.speed = random.nextDouble(50, 120);
-        automobile.weight = random.nextDouble(1, 10);
+        automobile.plateNumber = RANDOM.nextInt(100, 1000) + carPlateLetters;
+        automobile.width = RANDOM.nextDouble(1.5, 3);
+        automobile.height = RANDOM.nextDouble(1, 5);
+        automobile.length = RANDOM.nextDouble(3, 7.5);
+        automobile.speed = RANDOM.nextDouble(50, 120);
+        automobile.weight = RANDOM.nextDouble(1, 10);
         return automobile;
     }
 
