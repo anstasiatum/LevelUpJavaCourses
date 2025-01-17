@@ -1,6 +1,5 @@
 package levelupjavastart.employeecollection;
 
-import java.util.Objects;
 import java.util.Random;
 
 public class Employee {
@@ -38,17 +37,5 @@ public class Employee {
 
     public int getWorkAge() {
         return workAge;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return personnelNumber == employee.personnelNumber && workAge == employee.workAge && Objects.equals(fullName, employee.fullName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(fullName, personnelNumber, workAge);
     }
 }

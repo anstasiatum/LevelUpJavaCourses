@@ -1,10 +1,10 @@
 package levelupjavastart.employeecollection;
 
+import java.util.Collection;
 import java.util.Iterator;
-import java.util.Set;
 
 public class EmployeeUtils {
-    public static void printEmployee(Set<Employee> employees, int requiredWorkAge) {
+    public static void printEmployee(Collection<Employee> employees, int requiredWorkAge) {
 
         Iterator<Employee> iterator = employees.iterator();
 

@@ -1,14 +1,14 @@
 package levelupjavastart.employeecollection;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
 
 import static levelupjavastart.employeecollection.EmployeeUtils.printEmployee;
 
 public class EmployeeRunner {
     public static void main(String[] args) {
-        Set<Employee> employees = new HashSet<>();
+        List<Employee> employees = new ArrayList<>();
 
         for (int i = 0; i <= 10; i++) {
             Employee employee = Employee.employeeGenerator();
