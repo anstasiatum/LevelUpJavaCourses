@@ -4,16 +4,16 @@ import java.util.Objects;
 import java.util.Random;
 
 public class Employee {
-    String fullName;
-    int personnelNumber;
-    int workAge;
-
     private static final Random RANDOM = new Random();
+
+    private String fullName;
+    private int personnelNumber;
+    private int workAge;
 
     public static Employee employeeGenerator() {
         Employee employee = new Employee();
         StringBuilder randomFirstName = new StringBuilder(10);
-        StringBuilder randomSecondName = new StringBuilder(9);
+        StringBuilder randomSecondName = new StringBuilder(7);
         for (int i = 0; i < RANDOM.nextInt(5, 10); i++) {
             int randomLimitedInt = RANDOM.nextInt(97, 123);
             randomFirstName.append((char) randomLimitedInt);

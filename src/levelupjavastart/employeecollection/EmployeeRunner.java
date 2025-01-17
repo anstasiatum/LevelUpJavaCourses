@@ -1,6 +1,10 @@
 package levelupjavastart.employeecollection;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+import static levelupjavastart.employeecollection.EmployeeUtils.printEmployee;
 
 public class EmployeeRunner {
     public static void main(String[] args) {
@@ -9,21 +13,14 @@ public class EmployeeRunner {
         for (int i = 0; i <= 10; i++) {
             Employee employee = Employee.employeeGenerator();
             employees.add(employee);
-            System.out.println("Full name: %s, work experience: %d, personnel number: %d".formatted(employee.fullName, employee.workAge, employee.personnelNumber));
+            System.out.println("Full name: %s, work experience: %d, personnel number: %d".formatted(employee.getFullName(), employee.getWorkAge(), employee.getPersonnelNumber()));
         }
-
-        Iterator<Employee> iterator = employees.iterator();
 
         System.out.print("Enter the required work experience: ");
         Scanner scanner = new Scanner(System.in);
         int requiredWorkAge = scanner.nextInt();
 
-        System.out.println("The list of employees:");
-        while (iterator.hasNext()) {
-            Employee employee = iterator.next();
-            if (employee.workAge == requiredWorkAge) {
-                System.out.println(employee.fullName);
-            }
-        }
+        printEmployee(employees, requiredWorkAge);
     }
 }
+
