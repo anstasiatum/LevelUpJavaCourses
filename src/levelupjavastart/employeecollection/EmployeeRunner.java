@@ -1,14 +1,14 @@
 package levelupjavastart.employeecollection;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import static levelupjavastart.employeecollection.EmployeeUtils.printEmployee;
+import static levelupjavastart.employeecollection.EmployeeUtils.printEmployeeByExperience;
+import static levelupjavastart.employeecollection.EmployeeUtils.printEmployeeByPosition;
 
 public class EmployeeRunner {
     public static void main(String[] args) {
-        List<Employee> employees = new ArrayList<>();
+        ArrayList<Employee> employees = new ArrayList<>();
 
         for (int i = 0; i <= 10; i++) {
             Employee employee = Employee.employeeGenerator();
@@ -20,7 +20,8 @@ public class EmployeeRunner {
         Scanner scanner = new Scanner(System.in);
         int requiredWorkAge = scanner.nextInt();
 
-        printEmployee(employees, requiredWorkAge);
+        printEmployeeByExperience(employees, requiredWorkAge);
+        printEmployeeByPosition(employees);
     }
 }
 
