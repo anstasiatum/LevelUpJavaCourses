@@ -38,4 +38,8 @@ public class Employee {
     public int getWorkAge() {
         return workAge;
     }
+    @Override
+    public String toString() {
+        return "Name: " + this.getFullName();
+    }
 }
