@@ -1,6 +1,7 @@
 package levelupjavastart.employeecollection;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static levelupjavastart.employeecollection.EmployeeUtils.printEmployeeByExperience;
@@ -8,7 +9,7 @@ import static levelupjavastart.employeecollection.EmployeeUtils.printEmployeeByP
 
 public class EmployeeRunner {
     public static void main(String[] args) {
-        ArrayList<Employee> employees = new ArrayList<>();
+        List<Employee> employees = new ArrayList<>();
 
         for (int i = 0; i <= 10; i++) {
             Employee employee = Employee.employeeGenerator();
