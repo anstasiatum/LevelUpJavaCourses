@@ -19,7 +19,6 @@ public class PhoneBookRunner {
         Set<Caller> callerSet = Caller.callersWithContactsBuilder(callerNumber, contactNumber).keySet();
         Iterator<Caller> gatherContactsIterator = callerSet.iterator();
 
-
         List<String> allContactNumbers = new ArrayList<>(callerNumber * contactNumber);
 
         while (gatherContactsIterator.hasNext()) {
