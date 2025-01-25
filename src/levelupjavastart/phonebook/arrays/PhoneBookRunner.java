@@ -16,7 +16,6 @@ public class PhoneBookRunner {
 
         String[] allContactNumbers = new String[allContactsNumber];
 
-
         for (int callerNumberCounterForArray = 0; callerNumberCounterForArray < callerNumber; callerNumberCounterForArray++) {
             for (int j = 0; j < contactNumber; j++) {
                 allContactNumbers[contactNumberCounter] = callerArray[callerNumberCounterForArray].getContacts()[j].getPhoneNumber();
