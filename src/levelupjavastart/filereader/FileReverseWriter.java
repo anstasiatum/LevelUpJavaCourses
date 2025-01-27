@@ -25,7 +25,7 @@ public class FileReverseWriter {
 
     public static List<String> inputTextReverser() {
         List<String> fileLines = new ArrayList<>();
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("resources/inputfile.txt"))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src/resources/inputfile.txt"))) {
             fileLines = bufferedReader.lines()
                     .flatMap(e -> Stream.of(e.split("[^A-Za-zА-Яа-я0-9]+")))
                     .toList()
