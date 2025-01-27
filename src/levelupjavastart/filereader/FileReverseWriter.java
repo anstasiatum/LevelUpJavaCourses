@@ -25,20 +25,17 @@ public class FileReverseWriter {
 
     public static List<String> inputTextReverser() {
         List<String> fileLines = new ArrayList<>();
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src/levelupjavastart/filereader/inputfile.txt"))) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                fileLines.add(line);
-            }
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("resources/inputfile.txt"))) {
+            fileLines = bufferedReader.lines()
+                    .flatMap(e -> Stream.of(e.split("[^A-Za-zА-Яа-я0-9]+")))
+                    .toList()
+                    .reversed();
         } catch (FileNotFoundException ex) {
-            System.out.println("FIle was not found in the specified directory");
+            System.out.println("No file was found in the specified directory");
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-        return fileLines.stream()
-                .flatMap(e -> Stream.of(e.split("[^A-Za-zА-Яа-я0-9]+")))
-                .toList()
-                .reversed();
+        return fileLines;
     }
 
     public static void outputFileWriter(List<String> text, String path) {
