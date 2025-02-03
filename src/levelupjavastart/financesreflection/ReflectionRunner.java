@@ -45,7 +45,7 @@ public class ReflectionRunner {
             Field firstNameField = privateAccount.getClass().getDeclaredField("firstName");
             firstNameField.setAccessible(true);
             Object firstNameValue = firstNameField.get(privateAccount);
-            System.out.println("Private account ID before changes: " + firstNameValue);
+            System.out.println("First name in the private account before changes: " + firstNameValue);
         } catch (NoSuchFieldException | IllegalAccessException ex) {
             System.out.println(ex.getMessage());
         }
@@ -55,7 +55,7 @@ public class ReflectionRunner {
             Field firstNameField = privateAccount.getClass().getDeclaredField("firstName");
             firstNameField.setAccessible(true);
             firstNameField.set(privateAccount, "Alexander");
-            System.out.println("Private account ID after changes: " + firstNameField.get(privateAccount));
+            System.out.println("First name in the private account after changes: " + firstNameField.get(privateAccount));
         } catch (NoSuchFieldException | IllegalAccessException ex) {
             System.out.println(ex.getMessage());
         }

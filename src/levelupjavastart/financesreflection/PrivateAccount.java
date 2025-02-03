@@ -11,6 +11,24 @@ public class PrivateAccount extends Account {
 
     private LocalDateTime birthDate;
 
+    public PrivateAccount(String id,
+                          BigDecimal balance,
+                          LocalDateTime createdAt,
+                          String inn,
+                          String phoneNumber,
+                          String firstName,
+                          String lastName,
+                          String patronymicName,
+                          String socialInsuranceNumber,
+                          LocalDateTime birthDate) {
+        super(id, balance, createdAt, inn, phoneNumber);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymicName = patronymicName;
+        this.socialInsuranceNumber = socialInsuranceNumber;
+        this.birthDate = birthDate;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -48,24 +66,6 @@ public class PrivateAccount extends Account {
     }
 
     public void setBirthDate(LocalDateTime birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public PrivateAccount(String id,
-                          BigDecimal balance,
-                          LocalDateTime createdAt,
-                          String inn,
-                          String phoneNumber,
-                          String firstName,
-                          String lastName,
-                          String patronymicName,
-                          String socialInsuranceNumber,
-                          LocalDateTime birthDate) {
-        super(id, balance, createdAt, inn, phoneNumber);
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.patronymicName = patronymicName;
-        this.socialInsuranceNumber = socialInsuranceNumber;
         this.birthDate = birthDate;
     }
 }

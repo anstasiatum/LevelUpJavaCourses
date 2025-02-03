@@ -6,7 +6,21 @@ import java.time.LocalDateTime;
 public class LegalAccount extends Account {
     private String organizationName;
     private LocalDateTime registrationDate;
-    private long rsrn;
+    private long psrn; // ОГРН
+
+    public LegalAccount(String id,
+                        BigDecimal balance,
+                        LocalDateTime createdAt,
+                        String inn,
+                        String phoneNumber,
+                        String organizationName,
+                        LocalDateTime registrationDate,
+                        long psrn) {
+        super(id, balance, createdAt, inn, phoneNumber);
+        this.organizationName = organizationName;
+        this.registrationDate = registrationDate;
+        this.psrn = psrn;
+    }
 
     public String getOrganizationName() {
         return organizationName;
@@ -24,25 +38,11 @@ public class LegalAccount extends Account {
         this.registrationDate = registrationDate;
     }
 
-    public long getRsrn() {
-        return rsrn;
+    public long getPsrn() {
+        return psrn;
     }
 
-    public void setRsrn(long rsrn) {
-        this.rsrn = rsrn;
-    }
-
-    public LegalAccount(String id,
-                        BigDecimal balance,
-                        LocalDateTime createdAt,
-                        String inn,
-                        String phoneNumber,
-                        String organizationName,
-                        LocalDateTime registrationDate,
-                        long rsrn) {
-        super(id, balance, createdAt, inn, phoneNumber);
-        this.organizationName = organizationName;
-        this.registrationDate = registrationDate;
-        this.rsrn = rsrn;
+    public void setPsrn(long psrn) {
+        this.psrn = psrn;
     }
 }

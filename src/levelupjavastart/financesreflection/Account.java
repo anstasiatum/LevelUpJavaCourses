@@ -3,18 +3,28 @@ package levelupjavastart.financesreflection;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public abstract class Account {
+public abstract class Account implements BalanceChangeable {
     private String id;
     private BigDecimal balance;
     private LocalDateTime createdAt;
     private String inn;
     private String phoneNumber;
 
-    private void withdraw(BigDecimal amount) {
-        this.setBalance(getBalance().subtract(amount));
+    public Account(String id, BigDecimal balance, LocalDateTime createdAt, String inn, String phoneNumber) {
+        this.id = id;
+        this.balance = balance;
+        this.createdAt = createdAt;
+        this.inn = inn;
+        this.phoneNumber = phoneNumber;
     }
 
-    private void deposit(BigDecimal amount) {
+    @Override
+    public void withdraw(BigDecimal amount) {
+        this.setBalance(balance.subtract(amount));
+    }
+
+    @Override
+    public void deposit(BigDecimal amount) {
         this.setBalance(getBalance().add(amount));
     }
 
@@ -55,14 +65,6 @@ public abstract class Account {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Account(String id, BigDecimal balance, LocalDateTime createdAt, String inn, String phoneNumber) {
-        this.id = id;
-        this.balance = balance;
-        this.createdAt = createdAt;
-        this.inn = inn;
         this.phoneNumber = phoneNumber;
     }
 }
