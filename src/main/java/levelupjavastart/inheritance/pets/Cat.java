@@ -1,6 +1,5 @@
 package levelupjavastart.inheritance.pets;
 
-
 public class Cat extends Pet {
 
     String favouriteToy = "Mouse";
