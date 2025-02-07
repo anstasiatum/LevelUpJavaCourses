@@ -16,11 +16,7 @@ public class CheckpointRestrictions {
     public static void sizeRestrictions(Automobile automobile) throws SizeException {
         String sizeExceptionText = "The automobile cannot pass - it is too large. Plate number: %s, %s".formatted(automobile.getPlateNumber(), automobile.getAutomobileType());
 
-        if (automobile.getWeight() > 8) {
-            throw new SizeException(sizeExceptionText);
-        } else if (automobile.getHeight() > 4 || automobile.getWidth() > 2.5) {
-            throw new SizeException(sizeExceptionText);
-        } else if (automobile.getWidth() > 2.5) {
+        if (automobile.getWeight() > 8 || automobile.getHeight() > 4 || automobile.getWidth() > 2.5) {
             throw new SizeException(sizeExceptionText);
         }
     }
