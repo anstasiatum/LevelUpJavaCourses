@@ -6,20 +6,23 @@ import levelupjavastart.checkpointexceptions.exceptions.SpeedingException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 class CheckpointRestrictionsTest {
 
     @Test
     @DisplayName("No error messages for an automobile with valid dimensions(upper bounds)")
-    void validaDimensionsTest() {
+    void validDimensionsTest() {
         Automobile automobile = new Automobile(AutomobileType.TRUCK, "100crr", 60, 8,2.5, 4, 2);
         assertDoesNotThrow(() -> CheckpointRestrictions.sizeRestrictions(automobile));
     }
 
     @Test
     @DisplayName("No error messages for an automobile with valid speed(upper bound)")
-    void validaSpeedTest() {
+    void validSpeedTest() {
         Automobile automobile = new Automobile(AutomobileType.TRUCK, "100crr", 80, 7,2, 2, 1);
         assertDoesNotThrow(() -> CheckpointRestrictions.speedingRestrictions(automobile));
     }
