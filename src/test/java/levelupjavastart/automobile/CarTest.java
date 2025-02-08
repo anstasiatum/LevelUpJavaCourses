@@ -3,6 +3,8 @@ package levelupjavastart.automobile;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class CarTest {
     Automobile car = new Car();
 
@@ -11,9 +13,6 @@ class CarTest {
     void carCanMove() {
         String result = car.move(499);
         assertEquals("Can still move.", result);
-    }
-
-    private void assertEquals(String s, String result) {
     }
 
     @Test
