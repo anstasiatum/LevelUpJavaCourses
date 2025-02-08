@@ -1,10 +1,12 @@
 package levelupjavastart.checkpointexceptions;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Random;
 
 @Getter
+@RequiredArgsConstructor
 public class Automobile {
 
     private final AutomobileType automobileType;
@@ -35,15 +37,5 @@ public class Automobile {
         double carSpeed = RANDOM.nextDouble(50, 120);
         double carWeight = RANDOM.nextDouble(1, 10);
         return new Automobile(carAutomobileType, carPlateNumber, carSpeed, carWeight, carWidth, carHeight, carLength);
-    }
-
-    public Automobile(AutomobileType automobileType, String plateNumber, double speed, double weight, double width, double height, double length) {
-        this.automobileType = automobileType;
-        this.plateNumber = plateNumber;
-        this.speed = speed;
-        this.weight = weight;
-        this.width = width;
-        this.height = height;
-        this.length = length;
     }
 }
