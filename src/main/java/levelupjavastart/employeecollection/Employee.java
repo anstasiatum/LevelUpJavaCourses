@@ -1,7 +1,12 @@
 package levelupjavastart.employeecollection;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.util.Random;
 
+@Getter
+@AllArgsConstructor
 public class Employee {
     private static final Random RANDOM = new Random();
 
@@ -10,7 +15,6 @@ public class Employee {
     private int workAge;
 
     public static Employee employeeGenerator() {
-        Employee employee = new Employee();
         StringBuilder randomFirstName = new StringBuilder(10);
         StringBuilder randomSecondName = new StringBuilder(7);
         for (int i = 0; i < RANDOM.nextInt(5, 10); i++) {
@@ -21,23 +25,12 @@ public class Employee {
             int randomLimitedInt = RANDOM.nextInt(97, 123);
             randomSecondName.append((char) randomLimitedInt);
         }
-        employee.fullName = randomFirstName + " " + randomSecondName;
-        employee.personnelNumber = RANDOM.nextInt(100, 1000);
-        employee.workAge = RANDOM.nextInt(1, 30);
-        return employee;
+        String fullName = randomFirstName + " " + randomSecondName;
+        int personnelNumber = RANDOM.nextInt(100, 1000);
+        int workAge = RANDOM.nextInt(1, 30);
+        return new Employee(fullName, personnelNumber, workAge);
     }
 
-    public String getFullName() {
-        return fullName;
-    }
-
-    public int getPersonnelNumber() {
-        return personnelNumber;
-    }
-
-    public int getWorkAge() {
-        return workAge;
-    }
     @Override
     public String toString() {
         return "Name: " + this.getFullName();
