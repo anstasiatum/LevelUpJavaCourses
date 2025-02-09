@@ -1,8 +1,13 @@
 package levelupjavastart.financesreflection;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 public class PrivateAccount extends Account {
     private String firstName;
     private String lastName;
@@ -26,46 +31,6 @@ public class PrivateAccount extends Account {
         this.lastName = lastName;
         this.patronymicName = patronymicName;
         this.socialInsuranceNumber = socialInsuranceNumber;
-        this.birthDate = birthDate;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getPatronymicName() {
-        return patronymicName;
-    }
-
-    public void setPatronymicName(String patronymicName) {
-        this.patronymicName = patronymicName;
-    }
-
-    public String getSocialInsuranceNumber() {
-        return socialInsuranceNumber;
-    }
-
-    public void setSocialInsuranceNumber(String socialInsuranceNumber) {
-        this.socialInsuranceNumber = socialInsuranceNumber;
-    }
-
-    public LocalDateTime getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDateTime birthDate) {
         this.birthDate = birthDate;
     }
 }
