@@ -12,10 +12,8 @@ class SolveSquareRootTest {
     @Test
     @DisplayName("Square root for a positive integer argument")
     void squareRootForPositiveIntegerArgument() {
-        int actualResult = squareRoot(49);
-        int expectedResult = 7;
 
-        assertEquals(expectedResult, actualResult);
+        assertEquals(7, squareRoot(49));
     }
 
     @Test
@@ -24,7 +22,7 @@ class SolveSquareRootTest {
         int actualResult = squareRoot(35.56);
         int expectedResult = 5;
 
-        assertEquals(expectedResult, actualResult);
+        assertEquals(5, squareRoot(35.56));
     }
 
     @Test
@@ -33,7 +31,7 @@ class SolveSquareRootTest {
         int actualResult = squareRoot(0);
         int expectedResult = 0;
 
-        assertEquals(expectedResult, actualResult);
+        assertEquals(0, squareRoot(0));
     }
 
     @Test

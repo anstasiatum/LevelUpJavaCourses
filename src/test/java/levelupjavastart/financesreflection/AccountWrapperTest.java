@@ -38,7 +38,8 @@ class AccountWrapperTest {
                 LocalDateTime.parse("2000-08-09T14:12:13"),
                 784329);
     }
-    private BalanceChangeable createAccountWrapper(Account account) {
+
+    private static BalanceChangeable createAccountWrapper(Account account) {
         return  (BalanceChangeable) Proxy.newProxyInstance(
                 AccountLauncher.class.getClassLoader(),
                 new Class[]{BalanceChangeable.class},
@@ -54,10 +55,7 @@ class AccountWrapperTest {
         BigDecimal depositAmount = new BigDecimal("10");
         assertDoesNotThrow(() -> wrappedAccount.deposit(depositAmount));
 
-        BigDecimal expectedBalance = balanceBeforeDeposit.add(depositAmount);
-        BigDecimal actualBalance = privateAccount.getBalance();
-
-        assertEquals(expectedBalance, actualBalance);
+        assertEquals(balanceBeforeDeposit.add(depositAmount), privateAccount.getBalance());
     }
 
     @Test
