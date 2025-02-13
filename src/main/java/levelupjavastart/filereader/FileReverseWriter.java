@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 
 public class FileReverseWriter {
     public static void main(String[] args) {
-        List<String> reversedFileContents = inputTextReverser("src/resources/inputfile.txt");
+        List<String> reversedFileContents = inputTextReverser("src/main/resources/textreverser/inputfile.txt");
         System.out.println(reversedFileContents);
 
         System.out.println("Enter the required output file path: ");

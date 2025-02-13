@@ -1,8 +1,13 @@
 package levelupjavastart.financesreflection;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Setter
+@Getter
 public abstract class Account implements BalanceChangeable {
     private String id;
     private BigDecimal balance;
@@ -17,7 +22,7 @@ public abstract class Account implements BalanceChangeable {
         this.inn = inn;
         this.phoneNumber = phoneNumber;
     }
-
+    @Blocked
     @Override
     public void withdraw(BigDecimal amount) {
         this.setBalance(balance.subtract(amount));
@@ -26,45 +31,5 @@ public abstract class Account implements BalanceChangeable {
     @Override
     public void deposit(BigDecimal amount) {
         this.setBalance(getBalance().add(amount));
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getInn() {
-        return inn;
-    }
-
-    public void setInn(String inn) {
-        this.inn = inn;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 }
