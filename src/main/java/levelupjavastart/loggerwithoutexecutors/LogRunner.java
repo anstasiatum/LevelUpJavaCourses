@@ -1,4 +1,4 @@
-package levelupjavastart.threads;
+package levelupjavastart.loggerwithoutexecutors;
 
 public class LogRunner {
     static final String filePath = "src/main/resources/logger/logs";

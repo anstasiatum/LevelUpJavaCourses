@@ -1,4 +1,4 @@
-package levelupjavastart.threads;
+package levelupjavastart.loggerwithexecutors;
 
 public enum LogLevels {
     ERROR,

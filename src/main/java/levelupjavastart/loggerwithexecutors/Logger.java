@@ -1,4 +1,4 @@
-package levelupjavastart.threads;
+package levelupjavastart.loggerwithexecutors;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +15,7 @@ public class Logger {
     private LogLevels logLevel;
     private String message;
 
-    private static Random RANDOM = new Random();
+    private static final Random RANDOM = new Random();
 
     public static Logger logBuilder() {
 
@@ -39,7 +39,7 @@ public class Logger {
         return new Logger(logLevel, message);
     }
 
-    public void logWriter(String filePath) {
+    public synchronized void logWriter(String filePath) {
         Instant currentTime = Instant.now();
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filePath, true))) {
             bufferedWriter.append(currentTime.toString())

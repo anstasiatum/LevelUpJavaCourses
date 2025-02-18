@@ -1,4 +1,4 @@
-package levelupjavastart.threads;
+package levelupjavastart.loggerwithexecutors;
 
 import java.util.Random;
 
@@ -15,16 +15,14 @@ public class PrintLog implements Runnable {
 
     @Override
     public void run() {
-        int overallTime = 0;
-        while (overallTime <= 60_000) {
-            sleepTime = RANDOM.nextInt(0, 5000);
+        while (!Thread.currentThread().isInterrupted()) {
             try {
+                sleepTime = RANDOM.nextInt(0, 5000);
                 Thread.sleep(sleepTime);
                 logger.logWriter(filePath);
             } catch (InterruptedException e) {
-                System.out.println(e.getMessage());
+                Thread.currentThread().interrupt();
             }
-            overallTime += sleepTime;
         }
     }
 }
