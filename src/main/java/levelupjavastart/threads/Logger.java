@@ -19,7 +19,7 @@ public class Logger {
 
     public static Logger logBuilder() {
 
-        int logType = RANDOM.nextInt(0, 4);
+        int logType = RANDOM.nextInt(0, 5);
         LogLevels logLevel = switch (logType) {
             case 0 -> LogLevels.ERROR;
             case 1 -> LogLevels.WARN;
