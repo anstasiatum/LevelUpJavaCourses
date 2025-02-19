@@ -1,8 +1,9 @@
-package levelupjavastart.threads;
+package levelupjavastart.loggerwithoutexecutors;
 
 public class LogRunner {
+    static final String filePath = "src/main/resources/logger/logs";
+
     public static void main(String[] args) {
-        final String filePath = "src/main/resources/logger/logs";
 
         Thread threadButterfly = createLoggerThread("Butterfly", filePath);
         threadButterfly.start();

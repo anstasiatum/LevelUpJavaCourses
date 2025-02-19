@@ -1,4 +1,4 @@
-package levelupjavastart.threads;
+package levelupjavastart.loggerwithexecutors;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
