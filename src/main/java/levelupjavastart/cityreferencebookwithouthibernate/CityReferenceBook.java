@@ -1,4 +1,4 @@
-package levelupjavastart.cityreferencebook;
+package levelupjavastart.cityreferencebookwithouthibernate;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
