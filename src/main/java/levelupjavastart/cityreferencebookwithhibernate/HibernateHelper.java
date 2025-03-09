@@ -14,10 +14,6 @@ public class HibernateHelper {
 
     private static final Configuration CONFIG = new Configuration().configure();
 
-    public Session getSession() {
-        return CONFIG.buildSessionFactory().openSession();
-    }
-
     public EntityManager getEntityManager() {
         return CONFIG.buildSessionFactory().createEntityManager();
     }

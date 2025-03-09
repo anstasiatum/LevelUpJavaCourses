@@ -11,8 +11,8 @@ public class RegionJpaDaoImpl implements RegionDao {
     public void save(Region region) {
         HibernateHelper.runInTransaction(entityManager -> {
             if (region.getId() == null) {
-                Region region1 = entityManager.merge(region);
-                System.out.println(region1.getId());
+                Region mergedRegion = entityManager.merge(region);
+                System.out.println(mergedRegion.getId());
             } else {
                 entityManager.persist(region);
             }

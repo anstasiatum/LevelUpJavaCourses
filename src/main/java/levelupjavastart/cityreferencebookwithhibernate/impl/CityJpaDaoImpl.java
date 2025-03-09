@@ -13,8 +13,8 @@ public class CityJpaDaoImpl implements CityDao {
     public void save(City city) {
         HibernateHelper.runInTransaction(entityManager -> {
             if (city.getId() == null) {
-                City city1 = entityManager.merge(city);
-                System.out.println(city1.getId());
+                City mergedCity = entityManager.merge(city);
+                System.out.println(mergedCity.getId());
             } else {
                 entityManager.persist(city);
             }

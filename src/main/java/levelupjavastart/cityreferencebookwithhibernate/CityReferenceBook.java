@@ -9,6 +9,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CityReferenceBook {
+    final static CityDao cityJpaDao = new CityJpaDaoImpl();
+    final static RegionDao regionJpaDao = new RegionJpaDaoImpl();
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean isContinuing = false;
@@ -74,7 +77,6 @@ public class CityReferenceBook {
         Region cityRegion = findRegionById(regionId);
 
         City city = new City(null, cityCode, russianCityName, englishCityName, cityPopulation, cityRegion);
-        CityDao cityJpaDao = new CityJpaDaoImpl();
         cityJpaDao.save(city);
     }
 
@@ -82,13 +84,10 @@ public class CityReferenceBook {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the city ID: ");
         int cityId = scanner.nextInt();
-
-        CityDao cityJpaDao = new CityJpaDaoImpl();
         System.out.println(cityJpaDao.findById(cityId));
     }
 
     public static void findAllCities() {
-        CityDao cityJpaDao = new CityJpaDaoImpl();
         System.out.println(cityJpaDao.findAll());
     }
 
@@ -97,7 +96,6 @@ public class CityReferenceBook {
         System.out.println("Enter the city ID: ");
         int cityId = scanner.nextInt();
 
-        CityDao cityJpaDao = new CityJpaDaoImpl();
         cityJpaDao.deleteById(cityId);
         System.out.println(cityJpaDao.findAll());
     }
@@ -109,12 +107,10 @@ public class CityReferenceBook {
         String regionName = scanner.nextLine();
 
         Region region = new Region(null, regionName);
-        RegionDao regionDao = new RegionJpaDaoImpl();
-        regionDao.save(region);
+        regionJpaDao.save(region);
     }
 
     public static Region findRegionById(Integer regionId) {
-        RegionDao regionJpaDao = new RegionJpaDaoImpl();
         return regionJpaDao.findById(regionId).orElseThrow(() -> new IllegalArgumentException("Wrong region ID"));
     }
 }
