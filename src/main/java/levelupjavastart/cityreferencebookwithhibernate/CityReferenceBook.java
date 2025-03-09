@@ -20,9 +20,10 @@ public class CityReferenceBook {
             System.out.println("""
                     1 - Register a city;
                     2 - Find a city by its ID;
-                    3 - Find all cities;
-                    4 - Delete a city by its ID;
-                    5 - Register a region;
+                    3 - Find a city name by the city ID;
+                    4 - Find all cities;
+                    5 - Delete a city by its ID;
+                    6 - Register a region;
                     """);
             int action = scanner.nextInt();
 
@@ -34,12 +35,15 @@ public class CityReferenceBook {
                     findCityById();
                     break;
                 case 3:
-                    findAllCities();
+                    findCityNameById();
                     break;
                 case 4:
-                    deleteCityById();
+                    findAllCities();
                     break;
                 case 5:
+                    deleteCityById();
+                    break;
+                case 6:
                     registerRegion();
                     break;
                 default:
@@ -85,6 +89,15 @@ public class CityReferenceBook {
         System.out.println("Enter the city ID: ");
         int cityId = scanner.nextInt();
         System.out.println(cityJpaDao.findById(cityId));
+    }
+
+    public static void findCityNameById() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the city ID: ");
+        int cityId = scanner.nextInt();
+        String errorMessage = "The city is not found";
+        City city = cityJpaDao.findById(cityId).orElseThrow(() -> new IllegalArgumentException(errorMessage));
+        System.out.println(city.getRussianName() + "; " + city.getEnglishName());
     }
 
     public static void findAllCities() {
